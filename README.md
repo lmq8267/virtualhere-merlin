@@ -9,9 +9,17 @@
 <a href="https://github.com/lmq8267/virtualhere-merlin/issues"><img src="https://img.shields.io/github/issues-raw/lmq8267/virtualhere-merlin?logo=github&label=%E9%97%AE%E9%A2%98"></a>
 <a href="https://github.com/lmq8267/virtualhere-merlin/discussions"><img src="https://img.shields.io/github/discussions/lmq8267/virtualhere-merlin?logo=github&label=%E8%AE%A8%E8%AE%BA"></a>
 <a href="GitHub repo size"><img src="https://img.shields.io/github/repo-size/lmq8267/virtualhere-merlin?logo=github&label=%E4%BB%93%E5%BA%93%E5%A4%A7%E5%B0%8F"></a>
-<a href="https://github.com/lmq8267/virtualhere-merlin/actions?query=workflow%3ABuild"><img src="https://img.shields.io/github/actions/workflow/status/lmq8267/virtualhere-merlin/CI.yml?branch=main&logo=github&label=%E6%9E%84%E5%BB%BA%E7%8A%B6%E6%80%81" alt="Build status"></a>
+<a href="https://github.com/lmq8267/virtualhere-merlin/actions?query=workflow%3ABuild"><img src="https://img.shields.io/github/actions/workflow/status/lmq8267/virtualhere-merlin/CI.yml?branch=master&logo=github&label=%E6%9E%84%E5%BB%BA%E7%8A%B6%E6%80%81" alt="Build status"></a>
 </p>
 
 官网：https://www.virtualhere.com
+
+### UI预览
+
+![image](https://github.com/user-attachments/assets/6e34b574-e7ee-42e7-9657-625c08aed1b6)
+
+![image](https://github.com/user-attachments/assets/cc62d249-8a03-4d58-b5c1-6ba3be92cf24)
+
+![image](https://github.com/user-attachments/assets/a6135a9d-ac82-4d1a-87e5-f511588026e8)
 
 

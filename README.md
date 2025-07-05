@@ -1,8 +1,8 @@
 # virtualhere-梅林版离线安装包
 
 <p align="center">
-  <img alt="GitHub Created At" src="https://img.shields.io/github/created-at/lmq8267/virtualhere-merlin?logo=github&label=%E5%88%9B%E5%BB%BA%E6%97%A5%E6%9C%9F">
-<a href="https://hits.seeyoufarm.com"><img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Flmq8267%2Fvirtualhere-merlin&count_bg=%2395C10D&title_bg=%23555555&icon=github.svg&icon_color=%238DC409&title=%E8%AE%BF%E9%97%AE%E6%95%B0&edge_flat=false"/></a>
+  <img alt="" src="https://img.shields.io/github/created-at/lmq8267/virtualhere-merlin?logo=github&label=%E5%88%9B%E5%BB%BA%E6%97%A5%E6%9C%9F">
+<img alt="" src="https://views.whatilearened.today/views/github/lmq8267/virtualhere-merlin.svg">
 <a href="https://github.com/lmq8267/virtualhere-merlin/releases"><img src="https://img.shields.io/github/downloads/lmq8267/virtualhere-merlin/total?logo=github&label=%E4%B8%8B%E8%BD%BD%E9%87%8F"></a>
 <a href="https://github.com/lmq8267/virtualhere-merlin/graphs/contributors"><img src="https://img.shields.io/github/contributors-anon/lmq8267/virtualhere-merlin?logo=github&label=%E8%B4%A1%E7%8C%AE%E8%80%85"></a>
 <a href="https://github.com/lmq8267/virtualhere-merlin/releases/"><img src="https://img.shields.io/github/release/lmq8267/virtualhere-merlin?logo=github&label=%E6%9C%80%E6%96%B0%E7%89%88%E6%9C%AC"></a>
@@ -25,7 +25,7 @@
 -------------------------------------------
 
 ##### 客户端如何踢出其他客户端对服务器的连接？
-![image](https://github.com/user-attachments/assets/b9134ad6-a762-4b34-9060-6d3d6740e8df)
+![image](https://github.com/user-attachments/assets/7bbb5308-e798-4560-b419-c0ada2a30cd3)
 
 #
 - Liunx端的客户端GUI应该使用sudo命令添加 **`-a`** 参数启动，那么在管理界面就会有 **`断开其他用户连接`** 选项，添加 **`-q ZH-CN`** 参数启动默认中文（为了防止您之前的配置导致无法启动Admin模式，可以输入 **`sudo rm -rf /tmp/vhclient*`** 删除之前的配置缓存再启动即可）

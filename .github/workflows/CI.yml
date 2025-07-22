@@ -38,11 +38,21 @@ jobs:
           arm64url="https://www.virtualhere.com/sites/default/files/usbserver/vhusbdarm64"
           armurl="https://www.virtualhere.com/sites/default/files/usbserver/vhusbdarm"
           cd ./SWRT
+          if [ -n "${{ github.event.inputs.tag }}" ]; then
+            version="${{ github.event.inputs.tag }}"
+            version=${version#v}
+            echo "$version" > ./virtualhere/version
+          fi
           curl -Lk -o ./virtualhere/bin/vhusbdarm64 "${arm64url}" || wget --no-check-certificate -O ./virtualhere/bin/vhusbdarm64 "${arm64url}"
           curl -Lk -o ./virtualhere/bin/vhusbdarm "${armurl}" || wget --no-check-certificate -O ./virtualhere/bin/vhusbdarm "${armurl}"
           rm -rf virtualhere-SWRT.tar.gz || true
           tar czvf virtualhere-SWRT.tar.gz virtualhere
           cd ../koolshare
+          if [ -n "${{ github.event.inputs.tag }}" ]; then
+            version="${{ github.event.inputs.tag }}"
+            version=${version#v}
+            echo "$version" > ./virtualhere/version
+          fi
           curl -Lk -o ./virtualhere/bin/vhusbdarm64 "${arm64url}" || wget --no-check-certificate -O ./virtualhere/bin/vhusbdarm64 "${arm64url}"
           curl -Lk -o ./virtualhere/bin/vhusbdarm "${armurl}" || wget --no-check-certificate -O ./virtualhere/bin/vhusbdarm "${armurl}"
           rm -rf virtualhere-koolshare.tar.gz || true

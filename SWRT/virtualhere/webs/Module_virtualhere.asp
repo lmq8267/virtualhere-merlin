@@ -104,7 +104,7 @@ input[type=button]:focus {
 <script>
 var db_vhusbd = {};
 var node_max = 0;
-var params_input = ["vhusbd_cron_time", "vhusbd_cron_hour_min", "vhusbd_cron_type"]
+var params_input = ["vhusbd_cron_time", "vhusbd_cron_hour_min", "vhusbd_cron_type", "vhusbd_password"]
 var params_check = ["vhusbd_enable", "vhusbd_wan", "vhusbd_ipv6"]
 var params_base64 = ["vhusbd_config"]
 
@@ -427,6 +427,17 @@ function close_conf(close_conf) {
                                                 </div>
                                             </td>
                                         </tr>
+                                        <tr>
+    						<th>
+        					<label title="客户端连接此服务器时需输入密码">密码验证</label>
+    						</th>
+    						<td colspan="2">
+        					<div style="display:table-cell;float: left;">
+            					<input  type="password" name="vhusbd_password" id="vhusbd_password" autocomplete="new-password" class="input_ss_table" autocorrect="off" autocapitalize="off" maxlength="64" value="" onBlur="switchType(this, false);" onFocus="switchType(this, true);" placeholder="留空不需要密码即可连接">
+                				<i>此功能仅限激活后高级版才能使用</i>
+        					</div>
+    						</td>
+					</tr>
                                         <thead>
                                             <tr>
                                             <td colspan="2">配置文件</a></td>

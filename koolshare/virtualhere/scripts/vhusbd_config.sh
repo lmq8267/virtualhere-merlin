@@ -11,6 +11,7 @@ vh_ipv6=`dbus get vhusbd_ipv6`
 vh_cron_type=`dbus get vhusbd_cron_type`
 vh_cron_time=`dbus get vhusbd_cron_time`
 vh_cron_hour_min=`dbus get vhusbd_cron_hour_min`
+vh_password=`dbus get vhusbd_password`
 
 logg () {
    #logger -t "【VirtualHere】" "$1"
@@ -99,6 +100,34 @@ if [ "${vh_enable}" = "1" ] ; then
 	killall -9 vhusbd >/dev/null 2>&1
 	cmd=""
 	[ "$vh_ipv6" = "1" ] && cmd="-i " && logg "增加对 ipv6 的监听"
+	auth=$(grep -E "^clientAuthorization=" /koolshare/configs/vhusbd/vhusbd.ini)
+	auth_script="/tmp/vhusbd_auth.sh"
+	if [ -n "$vh_password" ] ; then
+		logg "增加密码验证"
+    		if [ -z "$auth" ] ; then
+        		echo 'clientAuthorization=/tmp/vhusbd_auth.sh "$VENDOR_ID$" "$PRODUCT_ID$" "$CLIENT_ID$" "$CLIENT_IP$" "$PRODUCT_SERIAL$" "$PASSWORD$" "$DEVPATH$" "$NICKNAME$" "$NUM_BINDINGS$"' >> /koolshare/configs/vhusbd/vhusbd.ini
+    		fi
+    		md5=$(echo -n "$vh_password" | md5sum | awk '{print $1}')
+    		cat > "$auth_script" <<EOF
+#!/bin/sh
+PASS_MD5="\$6"
+CORRECT="$md5"
+echo "\$(date '+%a %b %e %T %Y') LOG_INFO    供应商ID=【\$1】  产品ID=【\$2】  客户端账户=【\$3】  客户端IP=【\$4】  序列号=【\$5】  密码MD5=【\$6】  设备路径=【\$7】  客户端名称=【\$8】  当前连接数量=【\$9】" >>/tmp/upload/vhusbd.log
+if [ "\$PASS_MD5" = "\$CORRECT" ]; then
+    echo "\$(date '+%a %b %e %T %Y') LOG_INFO    密码验证通过" >> /tmp/upload/vhusbd.log
+    exit 1  # 密码正确
+else
+    echo "\$(date '+%a %b %e %T %Y') LOG_ERR    密码验证错误" >> /tmp/upload/vhusbd.log
+    exit 2  # 密码错误
+fi
+EOF
+
+    		chmod +x "$auth_script"
+	else
+    		if [ -n "$auth" ]; then
+        		sed -i '/^clientAuthorization=/d' /koolshare/configs/vhusbd/vhusbd.ini
+    		fi
+	fi
 	TZ=UTC-8 /koolshare/bin/vhusbd -c /koolshare/configs/vhusbd/vhusbd.ini -b ${cmd}-r /tmp/upload/vhusbd.log &
 	sleep 5
 	if [ ! -z "$(pidof vhusbd)" ] ; then

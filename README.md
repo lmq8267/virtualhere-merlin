@@ -16,7 +16,7 @@
 
 ### UI预览
 
-<img width="946" height="964" alt="image" src="https://github.com/user-attachments/assets/039b0eee-7d8e-46c1-88b5-7d6763b6961c" />
+![image](https://github.com/user-attachments/assets/039b0eee-7d8e-46c1-88b5-7d6763b6961c)
 
 ![image](https://github.com/user-attachments/assets/cc62d249-8a03-4d58-b5c1-6ba3be92cf24)
 

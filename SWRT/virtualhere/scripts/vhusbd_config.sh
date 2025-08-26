@@ -128,7 +128,7 @@ EOF
         		sed -i '/^clientAuthorization=/d' /jffs/softcenter/etc/vhusbd/vhusbd.ini
     		fi
 	fi
-	TZ=UTC-8 /jffs/softcenter/bin/vhusbd -c /jffs/softcenter/etc/vhusbd/vhusbd.ini -b ${cmd}-r /tmp/upload/vhusbd.log &
+	TZ=UTC-8 /jffs/softcenter/bin/vhusbd -c /jffs/softcenter/etc/vhusbd/vhusbd.ini -b ${cmd} -r /tmp/upload/vhusbd.log &
 	sleep 5
 	if [ ! -z "$(pidof vhusbd)" ] ; then
 		logg "vhusbd-$ver 启动成功！"
